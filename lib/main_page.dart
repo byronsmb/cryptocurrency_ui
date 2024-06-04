@@ -1,12 +1,35 @@
 import 'package:flutter/material.dart';
 
-class MainPage extends StatelessWidget {
-  const MainPage({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({super.key, required this.themeMode});
+  final ThemeMode themeMode;
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  bool isSelected = false;
+  void toggleSwitch(bool value) {
+    setState(() {
+      isSelected = !isSelected;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Home")),
+      appBar: AppBar(title: const Text("Home"), actions: [
+        Switch(
+          value: isSelected,
+          onChanged: toggleSwitch,
+          activeColor: Colors.orange,
+          activeThumbImage: NetworkImage(
+              "https://cdn-icons-png.freepik.com/512/6661/6661565.png"),
+          inactiveThumbImage: NetworkImage(
+              'https://cdn.icon-icons.com/icons2/1709/PNG/512/moon_112461.png'),
+        )
+      ]),
       backgroundColor: const Color.fromARGB(255, 48, 48, 48),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
