@@ -7,9 +7,10 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Home")),
+      backgroundColor: Color.fromARGB(255, 48, 48, 48),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3, // number of items in each row
+          crossAxisCount: 2, // number of items in each row
           mainAxisSpacing: 8.0, // spacing between rows
           crossAxisSpacing: 8.0, // spacing between columns
         ),
