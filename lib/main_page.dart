@@ -8,12 +8,12 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Home")),
       body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3, // number of items in each row
           mainAxisSpacing: 8.0, // spacing between rows
           crossAxisSpacing: 8.0, // spacing between columns
         ),
-        padding: EdgeInsets.all(8.0), // padding around the grid
+        padding: const EdgeInsets.all(8.0), // padding around the grid
         itemCount: 4, // total number of items
         itemBuilder: (context, index) {
           return Container(
