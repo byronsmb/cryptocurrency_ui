@@ -6,8 +6,8 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home")),
-      backgroundColor: Color.fromARGB(255, 48, 48, 48),
+      appBar: AppBar(title: const Text("Home")),
+      backgroundColor: const Color.fromARGB(255, 48, 48, 48),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, // number of items in each row
