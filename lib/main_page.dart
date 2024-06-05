@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({super.key, required this.themeMode});
-  final ThemeMode themeMode;
-
+  const MainPage({super.key, required this.getThemeMode});
+  //final ThemeMode themeMode;
+  final void Function(ThemeMode) getThemeMode;
   @override
   State<MainPage> createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
-  bool isSelected = false;
+  bool isDark = false;
   void toggleSwitch(bool value) {
     setState(() {
-      isSelected = !isSelected;
+      isDark = !isDark;
+      if (isDark) {
+        widget.getThemeMode(ThemeMode.light);
+      } else {
+        widget.getThemeMode(ThemeMode.dark);
+      }
     });
   }
 
@@ -21,7 +26,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       appBar: AppBar(title: const Text("Home"), actions: [
         Switch(
-          value: isSelected,
+          value: isDark,
           onChanged: toggleSwitch,
           activeColor: Colors.orange,
           activeThumbImage: NetworkImage(
@@ -34,7 +39,7 @@ class _MainPageState extends State<MainPage> {
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, // number of items in each row
-          mainAxisSpacing: 28.0, // spacing between rows
+          mainAxisSpacing: 20.0, // spacing between rows
           crossAxisSpacing: 8.0, // spacing between columns
           childAspectRatio: 4 / 5,
         ),

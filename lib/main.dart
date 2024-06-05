@@ -5,9 +5,14 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   ThemeMode themeMode = ThemeMode.system;
 
@@ -25,7 +30,14 @@ class MyApp extends StatelessWidget {
         colorSchemeSeed: const Color.fromRGBO(86, 80, 14, 171),
       ),
       themeMode: themeMode, // dark o light
-      home: MainPage(themeMode: themeMode),
+      home: MainPage(
+        getThemeMode: (currentTheme) {
+          setState(() {
+            themeMode = currentTheme;
+          });
+          print(themeMode);
+        },
+      ),
     );
   }
 }
