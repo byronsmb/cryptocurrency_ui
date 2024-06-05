@@ -40,14 +40,16 @@ class _MainPageState extends State<MainPage> {
         padding: const EdgeInsets.all(8.0), // padding around the grid
         itemCount: 4, // total number of items
         itemBuilder: (context, index) {
-          return Container(
-            color: Colors.blue, // color of grid items
-            child: Center(
-              child: Text(
-                "hola",
-                style: TextStyle(fontSize: 18.0, color: Colors.white),
+          return Stack(
+            children: [
+              Card(
+                child: Container(
+                  height: 200,
+                  width: 200,
+                  child: Text("Bitcoin"),
+                ),
               ),
-            ),
+            ],
           );
         },
       ),
