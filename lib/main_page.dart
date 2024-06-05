@@ -34,34 +34,44 @@ class _MainPageState extends State<MainPage> {
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, // number of items in each row
-          mainAxisSpacing: 8.0, // spacing between rows
+          mainAxisSpacing: 28.0, // spacing between rows
           crossAxisSpacing: 8.0, // spacing between columns
+          childAspectRatio: 4 / 5,
         ),
         padding: const EdgeInsets.all(8.0), // padding around the grid
         itemCount: 4, // total number of items
         itemBuilder: (context, index) {
-          return Stack(
-            children: [
-              Card(
-                child: Container(
-                  height: 200,
-                  width: 200,
-                  child: Text("Bitcoin"),
+          return Stack(children: [
+            Container(
+              height: 250,
+              color: Colors.red,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 25),
+                child: Card(
+                  child: Container(
+                    height: 200,
+                    width: 200,
+                    child: Text("Bitcoin"),
+                  ),
                 ),
               ),
-              Positioned(
-                  width: 60,
+            ),
+            Positioned(
+                top: 0,
+                //left: 75,
+                child: Center(
                   child: Container(
                     width: 200,
-                    color: Colors.red,
+                    height: 50,
+                    //color: Colors.red,
                     child: Image.network(
                       "https://cdn-icons-png.flaticon.com/512/5968/5968260.png",
                       width: 50,
                       alignment: Alignment.topCenter,
                     ),
-                  ))
-            ],
-          );
+                  ),
+                ))
+          ]);
         },
       ),
     );
