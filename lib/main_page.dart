@@ -49,6 +49,17 @@ class _MainPageState extends State<MainPage> {
                   child: Text("Bitcoin"),
                 ),
               ),
+              Positioned(
+                  width: 60,
+                  child: Container(
+                    width: 200,
+                    color: Colors.red,
+                    child: Image.network(
+                      "https://cdn-icons-png.flaticon.com/512/5968/5968260.png",
+                      width: 50,
+                      alignment: Alignment.topCenter,
+                    ),
+                  ))
             ],
           );
         },
