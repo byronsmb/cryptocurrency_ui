@@ -34,7 +34,6 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             themeMode = currentTheme;
           });
-          print(themeMode);
         },
       ),
     );
