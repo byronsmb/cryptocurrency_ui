@@ -38,12 +38,12 @@ class _MainPageState extends State<MainPage> {
       backgroundColor: const Color.fromARGB(255, 48, 48, 48),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, 
+          crossAxisCount: 2,
           mainAxisSpacing: 20.0, // spacing between rows
           crossAxisSpacing: 8.0, // spacing between columns
           childAspectRatio: 4 / 5,
         ),
-        padding: const EdgeInsets.all(8.0), // padding around the grid
+        padding: const EdgeInsets.all(8.0),
         itemCount: 4, // total number of items
         itemBuilder: (context, index) {
           return Stack(children: [
