@@ -49,13 +49,17 @@ class _MainPageState extends State<MainPage> {
           return Stack(children: [
             Container(
               height: 250,
-              color: Colors.red,
+              //color: Colors.red,
               child: Padding(
                 padding: const EdgeInsets.only(top: 25),
                 child: Card(
                   child: Container(
                     height: 200,
                     width: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Color.fromARGB(255, 26, 26, 26),
+                    ),
                     child: Text("Bitcoin"),
                   ),
                 ),
