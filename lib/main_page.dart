@@ -63,9 +63,26 @@ class _MainPageState extends State<MainPage> {
                       borderRadius: BorderRadius.circular(20),
                       color: Color.fromARGB(255, 26, 26, 26),
                     ),
-                    child: Text(
-                      "Bitcoin",
-                      style: TextStyle(color: Colors.white),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        RichText(
+                          text: TextSpan(
+                            text: 'Bitcoin ',
+                            style: TextStyle(color: Colors.white, fontSize: 15),
+                            children: [
+                              TextSpan(
+                                text: '(BTC)',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Text(
+                          "\$ 70,000.4",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
                     ),
                   ),
                 ),
