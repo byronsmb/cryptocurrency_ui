@@ -78,9 +78,18 @@ class _MainPageState extends State<MainPage> {
                             ],
                           ),
                         ),
-                        Text(
-                          "\$ 70,000.4",
-                          style: TextStyle(color: Colors.white),
+                        Row(
+                          children: [
+                            Text(
+                              "\$ 70,000.4",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Icon(Icons.arrow_drop_up, color: Colors.green),
+                            Text(
+                              "+4.5",
+                              style: TextStyle(color: Colors.green),
+                            ),
+                          ],
                         ),
                       ],
                     ),
