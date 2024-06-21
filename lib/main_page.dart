@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+//import 'package:syncfusion_flutter_charts/charts.dart';
+//import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key, required this.getThemeMode});
@@ -63,35 +65,52 @@ class _MainPageState extends State<MainPage> {
                       borderRadius: BorderRadius.circular(20),
                       color: Color.fromARGB(255, 26, 26, 26),
                     ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            text: 'Bitcoin ',
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                            children: [
-                              TextSpan(
-                                text: '(BTC)',
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          /*Container(
+                            height: 20,
+                            width: 20,
+                            color: Colors.red,
+
+                            ///child: SfCartesianChart(),
+                          ),*/
+                          /*Text(
+                            "data",
+                            style: TextStyle(color: Colors.amber),
+                          ),*/
+                          RichText(
+                            text: TextSpan(
+                              text: 'Bitcoin ',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 15),
+                              children: [
+                                TextSpan(
+                                  text: '(BTC)',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Row(
+                            children: const [
+                              Text(
+                                "\$ 70,000.4",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Spacer(),
+                              Icon(Icons.arrow_drop_up,
+                                  color: Colors.green), //arrow_drop_down
+                              Text(
+                                "+4.5",
+                                style: TextStyle(color: Colors.green),
                               ),
                             ],
                           ),
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              "\$ 70,000.4",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            Icon(Icons.arrow_drop_up, color: Colors.green),
-                            Text(
-                              "+4.5",
-                              style: TextStyle(color: Colors.green),
-                            ),
-                          ],
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
